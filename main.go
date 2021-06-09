@@ -69,7 +69,7 @@ mappingLoop:
 				cachedAnimalImages[animalType] = append(cachedAnimalImages[animalType], result.Link)
 			}
 		}
-		builder.WriteEntity(ubot.MsgEntity{Type: "image_online", Data: result.Link})
+		builder.WriteEntity(ubot.MsgEntity{Type: "image", Args: []string{result.Link}})
 		_ = api.SendChatMessage(bot, msgType, source, sender, builder.String())
 		break //nolint
 	}
